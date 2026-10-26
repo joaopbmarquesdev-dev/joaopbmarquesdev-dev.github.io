@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>João Pedro de Barros Marques · Ciência de Dados</title>
+  <meta name="description" content="Portfólio de João Pedro de Barros Marques, estudante de Ciência da Computação (CEUB) e Estatística (UnB), focado em Ciência de Dados.">
+  <meta name="theme-color" content="#05050c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="João Pedro Marques · Ciência de Dados">
+  <meta property="og:description" content="Estudante de Ciência da Computação (CEUB) e Estatística (UnB) em busca de estágio em Ciência de Dados.">
+  <meta property="og:url" content="https://joaopbmarquesdev-dev.github.io/">
+  <meta property="og:image" content="https://joaopbmarquesdev-dev.github.io/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://joaopbmarquesdev-dev.github.io/">
+
+  <!-- Google Search Console: cole aqui a linha de verificação que o Google te der, por exemplo:
+  <meta name="google-site-verification" content="SEU-CODIGO-AQUI"> -->
+
+  <!-- Dados estruturados: ajudam o Google a entender que esta página é sobre você -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "João Pedro de Barros Marques",
+    "alternateName": "João Pedro Marques",
+    "url": "https://joaopbmarquesdev-dev.github.io/",
+    "image": "https://joaopbmarquesdev-dev.github.io/preview.png",
+    "email": "mailto:joaopbmarques.dev@gmail.com",
+    "jobTitle": "Estudante de Ciência da Computação e Estatística",
+    "address": { "@type": "PostalAddress", "addressLocality": "Brasília", "addressRegion": "DF", "addressCountry": "BR" },
+    "affiliation": [
+      { "@type": "CollegeOrUniversity", "name": "Centro Universitário de Brasília (CEUB)" },
+      { "@type": "CollegeOrUniversity", "name": "Universidade de Brasília (UnB)" }
+    ],
+    "knowsAbout": ["Ciência de Dados", "Estatística", "Python", "SQL", "Inteligência Artificial"],
+    "sameAs": [
+      "https://www.linkedin.com/in/jo%C3%A3o-pedro-de-barros-marques-70ab53438/",
+      "https://github.com/joaopbmarquesdev-dev"
+    ]
+  }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234a7dff'/%3E%3Cstop offset='1' stop-color='%238a5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2305050c'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='26' text-anchor='middle' fill='url(%23g)'%3EJP%3C/text%3E%3C/svg%3E">
+
+  <!-- Fontes: Unbounded (títulos), DM Sans (texto) e JetBrains Mono (detalhes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;600&family=Unbounded:wght@500;700;800&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip" href="#sobre" data-i18n="skip">Pular para o conteúdo</a>
+
+  <!-- ========== TELA DE CARREGAMENTO ========== -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__logo">JP<span>.</span></div>
+    <div class="loader__bar"><span></span></div>
+    <div class="loader__count"><span class="loader__num">0</span>%</div>
+  </div>
+
+  <!-- Enfeites fixos: grão de filme, barra de progresso e cursor -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__ring"></span><span class="cursor__dot"></span></div>
+
+  <!-- ========== NAVEGAÇÃO ========== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#inicio" class="nav__logo" aria-label="Início">JP<span>.</span></a>
+
+      <nav class="nav__links" aria-label="Seções">
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#mente" data-i18n="nav.mind">Como penso</a>
+        <a href="#app" data-i18n="nav.app">App</a>
+        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="#objetivos" data-i18n="nav.goals">Objetivos</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" id="lang-pt" class="lang__btn is-active" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" id="lang-en" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO: partículas viram gráficos enquanto você rola ========== -->
+    <section id="inicio" class="hero">
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+
+      <span class="cross cross--tl" aria-hidden="true">+</span>
+      <span class="cross cross--tr" aria-hidden="true">+</span>
+      <span class="cross cross--bl" aria-hidden="true">+</span>
+      <span class="cross cross--br" aria-hidden="true">+</span>
+
+      <div class="hero__copy">
+        <p class="eyebrow" data-i18n="hero.hello">Olá, eu sou</p>
+        <h1 class="hero__name">
+          <span class="sr-only">João Pedro</span>
+          <span class="hero__line" data-scramble aria-hidden="true">João</span>
+          <span class="hero__line" data-scramble aria-hidden="true">Pedro</span>
+        </h1>
+        <p class="hero__role">
+          <span data-i18n="hero.role">Estudante de</span>
+          <span class="typed" aria-live="polite"></span><span class="typed__caret" aria-hidden="true"></span>
+        </p>
+        <div class="hero__actions">
+          <a href="#projetos" class="btn btn--primary" data-i18n="hero.cta1">Ver projetos</a>
+          <a href="#contato" class="btn btn--ghost btn--bracket" data-i18n="hero.cta2">Fale comigo</a>
+        </div>
+        <p class="hero__hint" data-i18n="hero.hint">Passe o mouse nos pontos</p>
+      </div>
+
+      <!-- Legendas que aparecem enquanto o gráfico se forma -->
+      <div class="hero__story" aria-hidden="true">
+        <p class="story story--1"><span class="story__step">01 · <span data-i18n="story.k1">dados</span></span><span data-i18n="story.1">Dados brutos parecem ruído…</span></p>
+        <p class="story story--2"><span class="story__step">02 · <span data-i18n="story.k2">análise</span></span><span data-i18n="story.2">…a análise revela como eles se relacionam…</span></p>
+        <p class="story story--3"><span class="story__step">03 · <span data-i18n="story.k3">padrão</span></span><span data-i18n="story.3">…o padrão aparece…</span></p>
+        <p class="story story--4"><span class="story__step">04 · <span data-i18n="story.k4">decisão</span></span><span data-i18n="story.4">…e vira uma decisão.</span></p>
+      </div>
+
+      <!-- Etiqueta estatística no canto do gráfico -->
+      <div class="hero__readout" aria-hidden="true">
+        <span class="readout__dot"></span>
+        <span class="readout__text"></span>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span class="scroll-cue__mouse"></span>
+        <span data-i18n="hero.scroll">role para baixo</span>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section id="sobre" class="section about">
+      <div class="container">
+        <p class="eyebrow reveal" data-i18n="about.eyebrow">[ sobre mim ]</p>
+
+        <p class="about__statement" data-i18n="about.statement">Sou movido pela curiosidade. Estudo Ciência da Computação no CEUB e Estatística na UnB ao mesmo tempo porque quero entender o código e a matemática por trás dos dados. Gosto de analisar, tirar conclusões e transformar números em decisões. Uso a IA como ferramenta, mas as ideias são minhas.</p>
+
+        <div class="about__grid">
+          <div class="about__card reveal" data-tilt>
+            <!-- Para usar sua foto: troque o <span> abaixo por <img src="foto.jpg" alt="João Pedro"> -->
+            <div class="avatar"><span>JP</span></div>
+            <dl class="facts">
+              <div><dt data-i18n="about.name">Nome</dt><dd>João Pedro de Barros Marques</dd></div>
+              <div><dt data-i18n="about.from">Local</dt><dd>Brasília · DF</dd></div>
+              <div><dt data-i18n="about.goal">Objetivo</dt><dd data-i18n="about.goalValue">Estágio em Ciência de Dados</dd></div>
+            </dl>
+          </div>
+
+          <div class="stats">
+            <div class="stat reveal">
+              <span class="stat__num" data-count="2">2</span>
+              <span class="stat__label" data-i18n="stats.1">graduações em paralelo</span>
+            </div>
+            <div class="stat reveal">
+              <span class="stat__num" data-count="8">8</span>
+              <span class="stat__label" data-i18n="stats.2">linguagens de programação</span>
+            </div>
+            <div class="stat reveal">
+              <span class="stat__num" data-count="4">4</span>
+              <span class="stat__label" data-i18n="stats.3">grandes objetivos de vida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMO EU PENSO (cartas 3D presas na tela) ========== -->
+    <section id="mente" class="mind">
+      <div class="mind__pin">
+        <div class="container mind__layout">
+          <div class="mind__intro">
+            <p class="eyebrow" data-i18n="mind.eyebrow">[ como eu penso ]</p>
+            <h2 class="title" data-scramble data-i18n="mind.title">Curiosidade que vira decisão</h2>
+            <p class="mind__lead" data-i18n="mind.lead">Meu jeito de resolver problemas é um ciclo: perguntar, analisar, decidir e aprender de novo.</p>
+            <div class="mind__counter" aria-hidden="true"><span class="mind__current">01</span> / 03</div>
+          </div>
+
+          <div class="mind__stage">
+            <article class="mind-card mind-card--1">
+              <span class="mind-card__num">01</span>
+              <div class="mind-card__visual mv-questions" aria-hidden="true">
+                <span data-i18n="mind.q1">Por quê?</span>
+                <span data-i18n="mind.q2">E se for diferente?</span>
+                <span data-i18n="mind.q3">Como medir isso?</span>
+                <span data-i18n="mind.q4">O que os dados dizem?</span>
+              </div>
+              <h3 data-i18n="mind.c1.title">Sede de conhecimento</h3>
+              <p data-i18n="mind.c1.text">Quero entender o porquê das coisas. Por isso faço duas graduações ao mesmo tempo e estou sempre estudando algo novo, dentro e fora da faculdade.</p>
+            </article>
+
+            <article class="mind-card mind-card--2">
+              <span class="mind-card__num">02</span>
+              <div class="mind-card__visual mv-heatmap" aria-hidden="true"></div>
+              <h3 data-i18n="mind.c2.title">Análise</h3>
+              <p data-i18n="mind.c2.text">Antes de opinar, olho os números. Organizo os dados, procuro relações entre as variáveis e testo se o que parece verdade se sustenta.</p>
+            </article>
+
+            <article class="mind-card mind-card--3">
+              <span class="mind-card__num">03</span>
+              <div class="mind-card__visual mv-tree" aria-hidden="true">
+                <svg viewBox="0 0 300 130" fill="none">
+                  <path class="tree-line" d="M150 22 L80 66 M150 22 L220 66 M80 66 L45 108 M80 66 L115 108 M220 66 L185 108 M220 66 L255 108"/>
+                  <rect class="tree-node" x="112" y="8" width="76" height="26" rx="13"/>
+                  <rect class="tree-node" x="48" y="54" width="64" height="24" rx="12"/>
+                  <rect class="tree-node" x="188" y="54" width="64" height="24" rx="12"/>
+                  <circle class="tree-leaf" cx="45" cy="110" r="9"/>
+                  <circle class="tree-leaf tree-leaf--on" cx="115" cy="110" r="9"/>
+                  <circle class="tree-leaf" cx="185" cy="110" r="9"/>
+                  <circle class="tree-leaf tree-leaf--on" cx="255" cy="110" r="9"/>
+                  <text x="150" y="25" text-anchor="middle" data-i18n="mind.tree0">dados</text>
+                  <text x="80" y="70" text-anchor="middle">x &gt; μ</text>
+                  <text x="220" y="70" text-anchor="middle">p &lt; 0,05</text>
+                </svg>
+              </div>
+              <h3 data-i18n="mind.c3.title">Tomada de decisão</h3>
+              <p data-i18n="mind.c3.text">Análise só vale quando vira ação. Gosto de transformar resultados em decisões claras, colocando prós, contras e riscos na mesa.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== APP EM DESENVOLVIMENTO (celular 3D que gira com o scroll) ========== -->
+    <section id="app" class="section app">
+      <div class="container app__layout">
+        <div class="app__text">
+          <p class="eyebrow reveal" data-i18n="app.eyebrow">[ em desenvolvimento ]</p>
+          <h2 class="title" data-scramble data-i18n="app.title">Um app para contratar serviços no bairro</h2>
+          <p class="app__lead reveal" data-i18n="app.lead">Estou criando um aplicativo que conecta moradores a prestadores de serviço da vizinhança, como babás, passeadores de cães e diaristas. A ideia é testar primeiro no meu próprio bairro.</p>
+
+          <ul class="app__features">
+            <li class="reveal">
+              <span class="feat__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="app.f1.title">Filtro por serviço</h3>
+                <p data-i18n="app.f1.text">O morador escolhe o tipo de serviço e vê quem atende perto dele.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="feat__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM5 9h14M9 4v5"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="app.f2.title">Perfil do prestador</h3>
+                <p data-i18n="app.f2.text">O prestador cria uma conta com os serviços que oferece e os horários disponíveis.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="feat__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="app.f3.title">Contato direto</h3>
+                <p data-i18n="app.f3.text">A conversa acontece por WhatsApp, e-mail ou telefone, sem intermediários.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Protótipo ilustrativo feito só com HTML e CSS -->
+        <div class="phone-wrap">
+          <div class="phone" role="img" aria-label="Protótipo ilustrativo do app de serviços do bairro" data-i18n-label="ph.aria">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <p class="ph-hello" data-i18n="ph.hello">Serviços perto de você</p>
+              <div class="ph-search" data-i18n="ph.search">Buscar no bairro…</div>
+              <div class="ph-chips">
+                <span class="is-on" data-i18n="ph.c1">Babá</span>
+                <span data-i18n="ph.c2">Passeador</span>
+                <span data-i18n="ph.c3">Diarista</span>
+              </div>
+              <div class="ph-card">
+                <span class="ph-avatar">A</span>
+                <div class="ph-info"><strong>Ana</strong><small data-i18n="ph.p1">Babá · seg a sex, 8h–18h</small></div>
+                <span class="ph-btn">WhatsApp</span>
+              </div>
+              <div class="ph-card">
+                <span class="ph-avatar ph-avatar--2">C</span>
+                <div class="ph-info"><strong>Carlos</strong><small data-i18n="ph.p2">Babá · fins de semana</small></div>
+                <span class="ph-btn">WhatsApp</span>
+              </div>
+              <div class="ph-card">
+                <span class="ph-avatar ph-avatar--3">M</span>
+                <div class="ph-info"><strong>Marina</strong><small data-i18n="ph.p3">Babá · noites</small></div>
+                <span class="ph-btn ph-btn--alt" data-i18n="ph.call">Ligar</span>
+              </div>
+              <p class="ph-note" data-i18n="ph.note">protótipo ilustrativo</p>
+            </div>
+          </div>
+          <div class="phone-shadow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section id="habilidades" class="section skills">
+      <div class="container">
+        <p class="eyebrow reveal" data-i18n="skills.eyebrow">[ habilidades ]</p>
+        <h2 class="title" data-scramble data-i18n="skills.title">Minha caixa de ferramentas</h2>
+      </div>
+
+      <!-- Faixas de texto que andam para os lados conforme o scroll -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__row marquee__row--1">Python · JavaScript · TypeScript · SQL · Java · C++ · PHP · Python · JavaScript · TypeScript · SQL ·</div>
+        <div class="marquee__row marquee__row--2">Estatística · Dados · IA · Flask · Next.js · PostgreSQL · Estatística · Dados · IA · Flask ·</div>
+      </div>
+
+      <div class="container">
+        <div class="skill-groups">
+          <div class="skill-group reveal" data-tilt>
+            <h3 data-i18n="skills.g1">Linguagens</h3>
+            <ul class="chips">
+              <li>Python</li><li>JavaScript</li><li>TypeScript</li><li>Java</li><li>C++</li><li>PHP</li><li>HTML</li><li>CSS</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal" data-tilt>
+            <h3 data-i18n="skills.g2">Dados &amp; análise</h3>
+            <ul class="chips">
+              <li data-i18n="skills.stats">Estatística</li><li data-i18n="skills.prob">Probabilidade</li><li>PostgreSQL</li><li>MySQL</li><li>Supabase</li><li>Excel</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal" data-tilt>
+            <h3 data-i18n="skills.g3">Frameworks &amp; ferramentas</h3>
+            <ul class="chips">
+              <li>Flask</li><li>Next.js</li><li>Git</li><li>GitHub</li><li>VS Code</li><li>Claude Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FORMAÇÃO (linha do tempo que se desenha no scroll) ========== -->
+    <section id="formacao" class="section education">
+      <div class="container">
+        <p class="eyebrow reveal" data-i18n="edu.eyebrow">[ formação ]</p>
+        <h2 class="title" data-scramble data-i18n="edu.title">Duas graduações, um caminho</h2>
+
+        <div class="timeline">
+          <div class="timeline__track"><span class="timeline__fill"></span></div>
+
+          <article class="tl-item">
+            <span class="tl-item__dot"></span>
+            <div class="tl-item__body" data-tilt>
+              <span class="tl-item__tag" data-i18n="edu.ongoing">Em andamento</span>
+              <h3 data-i18n="edu.cc">Ciência da Computação</h3>
+              <p class="tl-item__place">CEUB · Brasília</p>
+              <p data-i18n="edu.ccText">Programação, estruturas de dados, engenharia de software, banco de dados e DevOps.</p>
+            </div>
+          </article>
+
+          <article class="tl-item">
+            <span class="tl-item__dot"></span>
+            <div class="tl-item__body" data-tilt>
+              <span class="tl-item__tag" data-i18n="edu.ongoing">Em andamento</span>
+              <h3 data-i18n="edu.st">Estatística</h3>
+              <p class="tl-item__place">UnB · Universidade de Brasília</p>
+              <p data-i18n="edu.stText">Cálculo, probabilidade e métodos estatísticos: a base matemática da Ciência de Dados.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="now reveal">
+          <span class="now__label" data-i18n="edu.now">Neste semestre</span>
+          <ul class="chips">
+            <li data-i18n="edu.n1">Cálculo 2</li>
+            <li data-i18n="edu.n2">Métodos Estatísticos</li>
+            <li>DevOps</li>
+            <li data-i18n="edu.n3">Gestão de Projetos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS (carrossel 3D que anda com o scroll) ========== -->
+    <section id="projetos" class="projects">
+      <div class="projects__pin">
+        <div class="container">
+          <p class="eyebrow" data-i18n="proj.eyebrow">[ projetos ]</p>
+          <h2 class="title" data-scramble data-i18n="proj.title">Coisas que eu construí</h2>
+        </div>
+
+        <div class="hscroll">
+          <div class="hscroll__track">
+
+            <article class="project">
+              <span class="project__index">01</span>
+              <div class="project__visual pv-app" aria-hidden="true">
+                <div class="pv-app__phone">
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="pv-app__pins"><b></b><b></b><b></b><b></b></div>
+              </div>
+              <h3 data-i18n="proj.p0.title">App de serviços do bairro</h3>
+              <p data-i18n="proj.p0.text">Conecta moradores a babás, passeadores de cães e diaristas da vizinhança.</p>
+              <ul class="tags"><li data-i18n="tag.product">Produto</li><li data-i18n="tag.community">Comunidade</li></ul>
+              <a class="project__link" href="#app" data-i18n="proj.dev">Em desenvolvimento · ver detalhes</a>
+            </article>
+
+            <article class="project">
+              <span class="project__index">02</span>
+              <div class="project__visual pv-chat" aria-hidden="true">
+                <p class="pv-chat__msg pv-chat__msg--ai"><b data-i18n="pv.ai">Cliente (IA)</b><span data-i18n="pv.m1">Preciso de um sistema para agendar consultas.</span></p>
+                <p class="pv-chat__msg pv-chat__msg--me"><b data-i18n="pv.me">Analista</b><span data-i18n="pv.m2">Quem vai usar o sistema no dia a dia?</span></p>
+                <p class="pv-chat__typing"><i></i><i></i><i></i></p>
+              </div>
+              <h3 data-i18n="proj.p1.title">Requisitos com clientes simulados por IA</h3>
+              <p data-i18n="proj.p1.text">Projeto em Python em que a IA faz o papel de clientes, para treinar a coleta de requisitos de software.</p>
+              <ul class="tags"><li>Python</li><li data-i18n="tag.ai">IA</li><li data-i18n="tag.req">Requisitos</li></ul>
+              <span class="project__status" data-i18n="proj.soon">Em breve no GitHub</span>
+            </article>
+
+            <article class="project">
+              <span class="project__index">03</span>
+              <div class="project__visual pv-bars" aria-hidden="true">
+                <svg viewBox="0 0 300 150" preserveAspectRatio="none">
+                  <g class="pv-grid">
+                    <line x1="34" y1="20" x2="290" y2="20"/><line x1="34" y1="55" x2="290" y2="55"/>
+                    <line x1="34" y1="90" x2="290" y2="90"/><line x1="34" y1="125" x2="290" y2="125"/>
+                  </g>
+                  <g class="pv-axis"><text x="26" y="24">300</text><text x="26" y="59">200</text><text x="26" y="94">100</text><text x="26" y="129">0</text></g>
+                  <g class="pv-bar-g">
+                    <rect x="48" y="62" width="30" height="63" rx="4"/>
+                    <rect x="90" y="38" width="30" height="87" rx="4"/>
+                    <rect x="132" y="80" width="30" height="45" rx="4"/>
+                    <rect x="174" y="28" width="30" height="97" rx="4"/>
+                    <rect x="216" y="52" width="30" height="73" rx="4"/>
+                    <rect x="258" y="70" width="26" height="55" rx="4"/>
+                  </g>
+                  <line class="pv-mean" x1="40" y1="61" x2="290" y2="61"/>
+                  <text class="pv-mean-label" x="288" y="56" text-anchor="end" data-i18n="pv.mean">média</text>
+                  <g class="pv-axis pv-axis--x"><text x="63" y="143">A</text><text x="105" y="143">B</text><text x="147" y="143">C</text><text x="189" y="143">D</text><text x="231" y="143">E</text><text x="271" y="143">F</text></g>
+                </svg>
+                <span class="pv-tag" data-i18n="pv.illus">ilustrativo</span>
+              </div>
+              <h3 data-i18n="proj.p2.title">Análise de dados de condomínios</h3>
+              <p data-i18n="proj.p2.text">Trabalho da disciplina de Estatística na UnB: análise de dados de condomínios feita no Excel.</p>
+              <ul class="tags"><li>Excel</li><li data-i18n="tag.stats">Estatística</li><li>UnB</li></ul>
+              <span class="project__status" data-i18n="proj.soon">Em breve no GitHub</span>
+            </article>
+
+            <article class="project">
+              <span class="project__index">04</span>
+              <div class="project__visual pv-git" aria-hidden="true"></div>
+              <h3 data-i18n="proj.p3.title">Todos os meus repositórios</h3>
+              <p data-i18n="proj.p3.text">Trabalhos da faculdade e projetos pessoais, direto do meu GitHub.</p>
+              <a class="btn btn--primary btn--sm" href="#repos" data-i18n="proj.p3.cta">Ver lista abaixo</a>
+            </article>
+
+            <article class="project project--soon">
+              <span class="project__index">05</span>
+              <div class="project__visual pv-soon" aria-hidden="true">
+                <svg viewBox="0 0 300 150" preserveAspectRatio="none"><path d="M10 120 C 60 118, 80 70, 130 80 S 210 30, 290 24"/></svg>
+                <span>?</span>
+              </div>
+              <h3 data-i18n="proj.p4.title">Próximo projeto de dados</h3>
+              <p data-i18n="proj.p4.text">Estou desenvolvendo novos projetos de análise de dados. Volte em breve.</p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista automática de repositórios (carregada pela API do GitHub no script.js) -->
+      <div class="container" id="repos">
+        <h3 class="repos__title reveal" data-i18n="repos.title">No GitHub</h3>
+        <div class="repos" aria-live="polite">
+          <p class="repos__msg" data-i18n="repos.loading">Carregando repositórios…</p>
+        </div>
+        <div class="repos__profiles">
+          <a href="https://github.com/joaopbmarquesdev-dev" target="_blank" rel="noopener">github.com/joaopbmarquesdev-dev</a>
+          <a href="https://github.com/joaobmarques-afk" target="_blank" rel="noopener">github.com/joaobmarques-afk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== OBJETIVOS (globo 3D girando) ========== -->
+    <section id="objetivos" class="section goals">
+      <div class="container goals__layout">
+        <div class="goals__globe">
+          <canvas class="globe" aria-hidden="true"></canvas>
+          <p class="globe__caption" aria-hidden="true">BSB · 15,8° S · 47,9° W</p>
+        </div>
+
+        <div class="goals__list">
+          <p class="eyebrow reveal" data-i18n="goals.eyebrow">[ objetivos ]</p>
+          <h2 class="title" data-scramble data-i18n="goals.title">Para onde eu vou</h2>
+
+          <article class="goal" data-tilt>
+            <span class="goal__num">01</span>
+            <h3 data-i18n="goals.g1.title">Virar cientista de dados</h3>
+            <p data-i18n="goals.g1.text">Começar com um estágio e crescer na área de dados e inteligência artificial.</p>
+          </article>
+          <article class="goal" data-tilt>
+            <span class="goal__num">02</span>
+            <h3 data-i18n="goals.g2.title">Viajar o mundo</h3>
+            <p data-i18n="goals.g2.text">Conhecer outros países, culturas e jeitos de pensar. Cada lugar novo é uma aula.</p>
+          </article>
+          <article class="goal" data-tilt>
+            <span class="goal__num">03</span>
+            <h3 data-i18n="goals.g3.title">Usar a tecnologia para ajudar o próximo</h3>
+            <p data-i18n="goals.g3.text">Criar soluções para problemas reais das pessoas, como o app que estou fazendo para o meu bairro.</p>
+          </article>
+          <article class="goal" data-tilt>
+            <span class="goal__num">04</span>
+            <h3 data-i18n="goals.g4.title">Adquirir conhecimento sempre</h3>
+            <p data-i18n="goals.g4.text">Aprender todos os dias, na faculdade e fora dela. A curiosidade é o que me move.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contato" class="section contact">
+      <span class="cross cross--tl" aria-hidden="true">+</span>
+      <span class="cross cross--tr" aria-hidden="true">+</span>
+      <div class="container">
+        <p class="eyebrow reveal" data-i18n="contact.eyebrow">[ contato ]</p>
+        <h2 class="contact__big"><span data-i18n="contact.big1">Vamos</span> <span class="grad" data-i18n="contact.big2">conversar?</span></h2>
+        <p class="contact__text reveal" data-i18n="contact.text">Estou procurando estágio em Ciência de Dados. Se quiser trocar uma ideia, me chame por aqui:</p>
+
+        <div class="contact__links">
+          <!-- Para oferecer seu currículo: coloque curriculo.pdf na pasta e descomente a linha abaixo
+          <a class="btn btn--primary" href="curriculo.pdf" download>Baixar currículo (PDF)</a> -->
+          <div class="email reveal">
+            <span class="email__addr" id="email-addr">joaopbmarques.dev@gmail.com</span>
+            <button type="button" class="btn btn--ghost btn--sm" id="copy-email" data-i18n="contact.copy">Copiar</button>
+          </div>
+          <a class="social reveal" href="https://www.linkedin.com/in/jo%C3%A3o-pedro-de-barros-marques-70ab53438/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="social reveal" href="https://github.com/joaopbmarquesdev-dev" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> João Pedro de Barros Marques</span>
+      <span data-i18n="footer.made">Feito com HTML, CSS e JavaScript</span>
+      <a href="#inicio" class="footer__top" data-i18n="footer.top">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <!-- Bibliotecas: GSAP + ScrollTrigger (animações no scroll) e Lenis (scroll suave) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

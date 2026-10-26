@@ -1,48 +1,63 @@
-# Portfólio · João Pedro
+# João Pedro de Barros Marques · Portfólio
 
-Site pessoal feito só com HTML, CSS e JavaScript (+ GSAP para as animações de scroll e Lenis para o scroll suave).
+Site pessoal de apresentação. Sou estudante de **Ciência da Computação (CEUB)** e **Estatística (UnB)** e busco estágio em **Ciência de Dados**.
 
-## Arquivos
+**[Acesse o site →](https://joaopbmarquesdev-dev.github.io)**
 
-| Arquivo | Para que serve |
-|---|---|
-| `index.html` | Estrutura e textos em português |
-| `style.css` | Cores, fontes e layout (as cores ficam no topo, em `:root`) |
-| `script.js` | Textos em PT e EN (objeto `TEXTS`), partículas, globo 3D, animações e lista do GitHub |
-| `preview.png` | Imagem que aparece quando o link é compartilhado (LinkedIn, WhatsApp) |
-| `sitemap.xml` e `robots.txt` | Ajudam o Google a encontrar e ler o site |
+![Prévia do site](preview.png)
 
-## 1. Colocar o site no ar (GitHub Pages, grátis)
+## Sobre o site
 
-1. Entre no GitHub com a conta **joaopbmarquesdev-dev**.
-2. Clique em **New repository** e dê o nome exato `joaopbmarquesdev-dev.github.io`. Deixe **Public** e crie.
-3. Na página do repositório, clique em **uploading an existing file**, arraste todos os arquivos desta pasta e clique em **Commit changes**.
-4. Vá em **Settings → Pages**. Em *Source*, escolha **Deploy from a branch**, branch **main**, pasta **/ (root)** e salve.
-5. Em 1 a 2 minutos o site abre em **https://joaopbmarquesdev-dev.github.io**.
+O topo da página conta uma pequena história com dados. Enquanto você rola, 440 pontos saem de uma nuvem aleatória, formam um gráfico de dispersão com reta de regressão, se organizam numa distribuição normal e terminam numa regra de decisão. Os valores exibidos (correlação, coeficientes da reta e probabilidades) são calculados a partir dos próprios pontos simulados.
 
-> Se usar outro nome de repositório, troque o endereço em `index.html` (tags `og:url`, `og:image`, `canonical` e o bloco `ld+json`), em `sitemap.xml` e em `robots.txt`.
+## Destaques
 
-## 2. Colocar o site no Google (Search Console)
+- Partículas em canvas que reagem ao mouse e se reorganizam em gráficos conforme o scroll
+- Animações sincronizadas com a rolagem (GSAP ScrollTrigger) e scroll suave (Lenis)
+- Cartas em 3D, carrossel de projetos em perspectiva e um globo 3D desenhado em canvas
+- Versões em português e inglês
+- Responsivo para celular, tablet e computador
+- Acessível: respeita a opção "reduzir movimento", funciona pelo teclado e com leitores de tela
+- Lista de repositórios carregada automaticamente pela API do GitHub
 
-1. Acesse **https://search.google.com/search-console** com sua conta Google.
-2. Clique em **Adicionar propriedade** e escolha **Prefixo do URL** (a opção "Domínio" não funciona com github.io). Cole `https://joaopbmarquesdev-dev.github.io/`.
-3. Verifique que o site é seu. Escolha uma das opções:
-   - **Arquivo HTML (mais fácil):** baixe o arquivo `google....html` que o Google oferece, envie para o repositório como no passo 1.3 e clique em **Verificar**.
-   - **Tag HTML:** copie a linha `<meta name="google-site-verification" ...>`, cole no `index.html` no lugar indicado (procure "Google Search Console"), envie o arquivo atualizado e clique em **Verificar**.
-4. No menu **Sitemaps**, digite `sitemap.xml` e clique em **Enviar**.
-5. No menu **Inspeção de URL**, cole o endereço do site e clique em **Solicitar indexação**.
-6. O Google costuma levar de alguns dias a duas semanas para mostrar o site. Para conferir, pesquise `site:joaopbmarquesdev-dev.github.io` no Google.
+## Tecnologias
 
-### Para aparecer mais rápido
+HTML, CSS e JavaScript puro, sem frameworks e sem etapa de build.
 
-- Coloque o link do site no **LinkedIn** (seção "Destaques" e em "Informações de contato → Site").
-- Coloque o link no campo **Website** do seu perfil do GitHub.
-- Sempre que mudar algo importante, atualize a data em `sitemap.xml`.
+- [GSAP](https://gsap.com) + ScrollTrigger para as animações
+- [Lenis](https://lenis.darkroom.engineering) para o scroll suave
+- Canvas 2D para as partículas, os gráficos e o globo
+- GitHub Pages para a hospedagem
 
-## Personalizar
+## Estrutura
 
-- **Foto:** coloque `foto.jpg` na pasta e troque `<span>JP</span>` dentro de `.avatar` por `<img src="foto.jpg" alt="João Pedro">`.
-- **Currículo em PDF:** coloque `curriculo.pdf` na pasta e tire o comentário da linha indicada na seção de contato do `index.html`.
-- **Novo projeto:** copie um `<article class="project">` no `index.html` e adicione os textos em PT e EN no `script.js`.
-- **Contas do GitHub listadas:** edite `GITHUB_USERS` no começo do `script.js`.
-- **Testar no computador:** abra a pasta no VS Code e use a extensão **Live Server** (botão "Go Live").
+```
+├── index.html     estrutura da página e textos em português
+├── style.css      cores, tipografia, layout e responsividade
+├── script.js      traduções, partículas, globo, animações e integração com o GitHub
+├── preview.png    imagem de prévia para links compartilhados
+├── sitemap.xml    mapa do site para buscadores
+└── robots.txt     regras para buscadores
+```
+
+## Rodar localmente
+
+```bash
+git clone https://github.com/joaopbmarquesdev-dev/joaopbmarquesdev-dev.github.io.git
+cd joaopbmarquesdev-dev.github.io
+python -m http.server 8000
+```
+
+Depois abra `http://localhost:8000` no navegador. A extensão Live Server do VS Code também funciona.
+
+## Contato
+
+- **LinkedIn:** [João Pedro de Barros Marques](https://www.linkedin.com/in/jo%C3%A3o-pedro-de-barros-marques-70ab53438/)
+- **E-mail:** joaopbmarques.dev@gmail.com
+- **GitHub:** [joaopbmarquesdev-dev](https://github.com/joaopbmarquesdev-dev)
+
+---
+
+### English
+
+Personal portfolio of João Pedro de Barros Marques, a Computer Science (CEUB) and Statistics (UnB) student looking for a Data Science internship. Built with plain HTML, CSS and JavaScript, with GSAP scroll animations and a canvas data story that turns random points into a regression, a normal distribution and a decision rule. **[Visit the site →](https://joaopbmarquesdev-dev.github.io)**
